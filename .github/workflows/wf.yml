@@ -1,12 +1,15 @@
-name: First GitHub Action
+name: HTML Check
 
-on: 
+on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
-  hello-world:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Print message
-        run: echo "Hello from GitHub Actions!"
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Show project files
+        run: ls -R
